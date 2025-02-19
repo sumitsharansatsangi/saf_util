@@ -1,0 +1,2 @@
+/home/sumit/StudioProjects/saf_util/example/android/app/.cxx/Debug/4p4mw5j3/x86/CMakeFiles/edit_cache.dir
+/home/sumit/StudioProjects/saf_util/example/android/app/.cxx/Debug/4p4mw5j3/x86/CMakeFiles/rebuild_cache.dir

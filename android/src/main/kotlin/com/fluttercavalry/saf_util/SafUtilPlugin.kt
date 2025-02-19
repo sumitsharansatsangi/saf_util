@@ -382,8 +382,8 @@ class SafUtilPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
       "pickDirectory" -> {
         try {
           val initialUri = call.argument<String>("initialUri")
-          val writePermission = call.argument<Boolean>("writePermission") ?: false
-          val persistablePermission = call.argument<Boolean>("persistablePermission") ?: false
+          val writePermission = call.argument<Boolean>("writePermission") == true
+          val persistablePermission = call.argument<Boolean>("persistablePermission") == true
 
           if (activity == null) {
             result.error("NO_ACTIVITY", "Activity is null", null)
@@ -422,7 +422,7 @@ class SafUtilPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
       "pickFiles" -> {
         try {
           val initialUri = call.argument<String>("initialUri")
-          val multiple = call.argument<Boolean>("multiple") ?: false
+          val multiple = call.argument<Boolean>("multiple") == true
           val mimeTypes = call.argument<ArrayList<String>>("mimeTypes") ?: arrayListOf()
 
           if (activity == null) {
@@ -661,7 +661,7 @@ class SafUtilPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
         context.contentResolver, df.uri, newName
       )
       return result
-    } catch (err: Exception) {
+    } catch (_: Exception) {
       return null
     }
   }
